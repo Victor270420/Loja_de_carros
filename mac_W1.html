@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McLaren W1 - Hypercar Revolution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:wght@300;500;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-red: #FF2400;
+            --carbon-black: #0a0a0a;
+            --tech-glow: rgba(255, 36, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            color: #fff;
+            background: var(--carbon-black);
+            overflow-x: hidden;
+        }
+
+        /* ===== SEÇÃO INICIAL (MANTIDA COMO ANTES) ===== */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.9) 25%, transparent 100%),
+                url('https://example.com/mclaren-w1-hero.jpg') center/cover fixed;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 8%;
+        }
+
+        .specs-overlay {
+            position: relative;
+            width: 40%;
+            min-width: 500px;
+            padding: 4rem;
+            background: rgba(20, 20, 20, 0.95);
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+            transform: skewX(-5deg);
+            margin-left: -5%;
+            margin-bottom: 10vh;
+            border-left: 4px solid var(--primary-red);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        .specs-item {
+            margin-bottom: 3rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .specs-value {
+            font-size: 3.5rem;
+            font-family: 'Audiowide', sans-serif;
+            color: #fff;
+            text-shadow: 0 0 15px var(--tech-glow);
+            line-height: 1;
+        }
+
+        .specs-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.8rem;
+        }
+
+        /* ===== NOVAS SEÇÕES NO ESTILO LAMBORGHINI ===== */
+        .dynamic-section {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .geometric-wrapper {
+            clip-path: polygon(15% 0%, 100% 0, 85% 100%, 0% 100%);
+            position: relative;
+            background: var(--carbon-black);
+        }
+
+        .section-image {
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            mix-blend-mode: luminosity;
+            transition: all 1s ease;
+        }
+
+        .tech-overlay {
+            padding: 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(45deg, rgba(10, 10, 10, 0.95) 0%, transparent 100%);
+        }
+
+        .dynamic-title {
+            font-size: 3rem;
+            font-family: 'Audiowide', sans-serif;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .dynamic-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 80%;
+            background: var(--primary-red);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-card {
+            padding: 2rem;
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--tech-glow);
+        }
+
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 40%, var(--tech-glow) 100%);
+            transform: rotate(45deg);
+            z-index: -1;
+        }
+
+        .tech-number {
+            font-size: 2.4rem;
+            font-family: 'Audiowide', sans-serif;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .tech-desc {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ===== SEÇÃO 3D INTERACTIVE ===== */
+        .model3d-section {
+            height: 150vh;
+            position: relative;
+            background: linear-gradient(var(--carbon-black) 30%, #1a1a1a 100%);
+        }
+
+        .model3d-container {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .model3d-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8%;
+            pointer-events: none;
+        }
+
+        .model3d-title {
+            font-size: 4rem;
+            font-family: 'Audiowide', sans-serif;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s ease;
+        }
+
+        .model3d-active .model3d-title {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ===== CONTROLES DE NAVEGAÇÃO ===== */
+        .nav-dots {
+            position: fixed;
+            right: 3%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .dot {
+            display: block;
+            width: 12px;
+            height: 12px;
+            margin: 25px 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--primary-red);
+            transform: scale(1.4);
+            box-shadow: 0 0 15px var(--tech-glow);
+        }
+
+        /* ===== ANIMAÇÕES ===== */
+        @keyframes scanline {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        .scan-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom,
+                    transparent 49%,
+                    rgba(255, 36, 0, 0.1) 50%,
+                    transparent 51%);
+            animation: scanline 6s linear infinite;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 1200px) {
+            .dynamic-section {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .geometric-wrapper {
+                height: 60vh;
+                clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+            }
+
+            .tech-overlay {
+                padding: 4rem 2rem;
+            }
+        }
+    /* Header e Navegação */
+/* Header Fixo Padronizado */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Altura fixa */
+    z-index: 1000;
+    padding: 0 40px; /* Padding somente horizontal */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    transition: all 0.3s ease; /* Suaviza mudanças */
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ocupa toda largura */
+}
+
+.logo h1 {
+    color: #fff;
+    font-size: 28px; /* Tamanho reduzido */
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0; /* Remove margens padrão */
+    text-transform: uppercase;
+}
+
+.logo h1{
+    font-size: 30px;
+}
+    </style>
+</head>
+
+<body>
+        <!-- Header/Navigation -->
+        <header class="main-header">
+            <nav class="main-nav">
+                <div class="logo">
+                    <h1>LUXURY CARS</h1>
+                    
+                </div>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+        <main class="hero-section">
+            <div class="video-slider">
+                <!-- McLaren P1 Section -->
+                <section class="car-slide active" data-car="mclaren-p1">
+                    <div class="video-container">
+                        <div id="player1" class="background-video"></div>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="car-content">
+                        <h2 class="car-name">McLaren W1</h2>
+                        <p class="car-description">Poder. Precisão. Perfeição.</p>
+                    </div>
+                </section>
+            </div>
+    
+            </div>
+        </main>
+    <!-- Seção Aerodinâmica -->
+    <section class="dynamic-section scan-effect">
+        <div class="geometric-wrapper">
+            <div class="section-image" style="background-image: url('https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2024/10/08/444108_1128126_original_16850_mclaren_w1_front_3_4_high_black-1iv73ca2t8iuc.jpg')"></div>
+        </div>
+        <div class="tech-overlay">
+            <h2 class="dynamic-title">Aerodinâmica Ativa</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-number">8 MODOS</div>
+                    <div class="tech-desc">Sistema de gerenciamento aerodinâmico com modos de corrida inteligentes</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-number">850kg</div>
+                    <div class="tech-desc">Downforce máximo a 300km/h</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-number">0.28 Cd</div>
+                    <div class="tech-desc">Coeficiente de arrasto em modo velocidade máxima</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-number">3 TURBINAS</div>
+                    <div class="tech-desc">Sistema de resfriamento com ventilação ativa</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Powertrain -->
+    <section class="dynamic-section scan-effect">
+        <div class="tech-overlay">
+            <h2 class="dynamic-title">HIBRIDO EXTREMO</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-number">4.0L V8</div>
+                    <div class="tech-desc">Motor térmico twin-turbo com 780cv @ 7,500rpm</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-number">e-Motor</div>
+                    <div class="tech-desc">Sistema híbrido de 150kW (204cv) com torque instantâneo</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-number">900Nm</div>
+                    <div class="tech-desc">Torque combinado disponível de 3,000-7,000rpm</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-number">8 DCT</div>
+                    <div class="tech-desc">Câmbio de dupla embreagem com trocas em 50ms</div>
+                </div>
+            </div>
+        </div>
+        <div class="geometric-wrapper">
+            <div class="section-image" style="background-image: url('https://fotos-jornaldocarro-estadao.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2024/10/07124253/mclaren_w1_96.jpeg-1160x653.webp')"></div>
+        </div>
+    </section>
+
+    <!-- Seção Chassi -->
+    <section class="dynamic-section scan-effect">
+        <div class="geometric-wrapper">
+            <div class="section-image" style="background-image: url('https://mclaren.scene7.com/is/image/mclaren/header_lp:crop-16x9?wid=1920&hei=1080')"></div>
+        </div>
+        <div class="tech-overlay">
+            <h2 class="dynamic-title">ESTRUTURA MONOCELULA</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-number">MCTC 4.0</div>
+                    <div class="tech-desc">Monocasco em fibra de carbono de última geração</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-number">1,280kg</div>
+                    <div class="tech-desc">Peso seco com distribuição 42/58</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-number">6 MODOS</div>
+                    <div class="tech-desc">Sistema de suspensão hidropneumática ativa</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-number">CCM-R</div>
+                    <div class="tech-desc">Freios cerâmicos com 8 pistões frontais</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3D -->
+    <section class="model3d-section">
+        <div class="model3d-container">
+            <div class="model3d-overlay">
+                <h2 class="model3d-title">EXPLORE CADA DETALHE</h2>
+                <div class="tech-grid" style="max-width: 600px;">
+                    <div class="tech-card">
+                        <div class="tech-number">360°</div>
+                        <div class="tech-desc">Visualização completa do motor híbrido</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-number">X-RAY</div>
+                        <div class="tech-desc">Modo de visualização estrutural</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Integração 3D (substituir pelo viewer real) -->
+            <div id="3d-container" style="width: 100%; height: 100%; background: rgba(255,36,0,0.1);">
+                <!-- Inserir implementação 3D aqui -->
+            </div>
+        </div>
+
+    </section>
+<style>
+    /* Remover efeito scanline */
+    .scan-effect::after {
+        display: none !important;
+    }
+
+    /* Efeito Hover nas Imagens */
+    .section-image {
+        filter: grayscale(1);
+        mix-blend-mode: luminosity;
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .section-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,36,0,0.05);
+        z-index: 1;
+        transition: all 0.8s ease;
+    }
+
+    .section-image:hover {
+        filter: grayscale(0);
+        mix-blend-mode: normal;
+    }
+
+    .section-image:hover::before {
+        background: rgba(255,36,0,0);
+    }
+
+    /* Efeito de Transição de Cor */
+    @keyframes colorize {
+        0% { filter: grayscale(1); }
+        100% { filter: grayscale(0); }
+    }
+
+    .geometric-wrapper:hover .section-image {
+        animation: colorize 0.8s forwards;
+    }
+
+    /* Ajustar Margens */
+    .tech-overlay {
+        margin-left: 5%;
+        padding-right: 10%;
+    }
+</style>
+
+<script>
+    // Adicionar interatividade dinâmica
+    document.querySelectorAll('.geometric-wrapper').forEach(wrapper => {
+        wrapper.addEventListener('mousemove', (e) => {
+            const rect = wrapper.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            wrapper.style.setProperty('--mouse-x', `${x}px`);
+            wrapper.style.setProperty('--mouse-y', `${y}px`);
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+            wrapper.style.removeProperty('--mouse-x');
+            wrapper.style.removeProperty('--mouse-y');
+        });
+    });
+</script>
+<script>
+
+    var player1, player2, player3, player4;
+
+    function onYouTubeIframeAPIReady() {
+
+        player1 = new YT.Player('player1', {
+            videoId: 'RjJver7mPlg',  // Novo vídeo da McLaren P1
+            playerVars: {
+                'autoplay': 1,
+                'controls': 0,
+                'showinfo': 0,
+                'modestbranding': 1,
+                'loop': 1,
+                'playlist': 'RjJver7mPlg',
+                'mute': 1,
+                'start': 19, // Começa no segundo 10 (ajuste conforme necessário)
+                'end': 71,  // Termina no segundo 40
+                'cc_load_policy': 0,
+                'iv_load_policy': 3,
+                'rel': 0
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+    // Header Scroll Effect
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.main-header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+</script>
+<script src="main.js"></script>
+</body>
